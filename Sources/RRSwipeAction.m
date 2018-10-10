@@ -31,6 +31,7 @@
 
 - (instancetype)initWithImage:(UIImage *)image
                         width:(CGFloat)width
+              backgroundColor:(UIColor *)backgroundColor
                       handler:(void(^)())handler
 {
     self = [super init];
@@ -38,6 +39,7 @@
         return nil;
     }
     _image = image;
+    _backgroundColor = backgroundColor;
     _handler = handler;
     _width = width;
     return self;

@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) UIImage *image;
 - (instancetype)initWithImage:(UIImage *)image
                         width:(CGFloat)width
+              backgroundColor:(UIColor *)backgroundColor
                       handler:(void(^)())handler;
 
 @property (nonatomic, strong, readonly) UIFont *font;

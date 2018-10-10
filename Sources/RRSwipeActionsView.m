@@ -36,11 +36,8 @@
     NSInteger index = 0;
     CGFloat lastMinX = self.maxSize.width;
     for (RRSwipeAction *action in self.actions) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-        
-        if (action.backgroundColor) {
-            button.backgroundColor = action.backgroundColor;
-        }
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.backgroundColor = action.backgroundColor;
         
         if (action.title) {
             [button setTitle:action.title forState:UIControlStateNormal];
