@@ -15,9 +15,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UIColor *titleColor;
 @property (nonatomic, strong, readonly) UIColor *backgroundColor;
 @property (nonatomic, copy, readonly) void (^handler)();
+
 - (instancetype)initWithTitle:(NSString *)title
                    titleColor:(UIColor *)titleColor
               backgroundColor:(UIColor *)backgroundColor
+                      handler:(void(^)())handler;
+
+@property (nonatomic, copy, readonly) UIImage *image;
+- (instancetype)initWithImage:(UIImage *)image
+              backgroundColor:(UIColor *)backgroundColor
+                        width:(CGFloat)width
                       handler:(void(^)())handler;
 
 @property (nonatomic, strong, readonly) UIFont *font;

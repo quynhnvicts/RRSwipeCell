@@ -29,5 +29,20 @@
     return self;
 }
 
+- (instancetype)initWithImage:(UIImage *)image
+              backgroundColor:(UIColor *)backgroundColor
+                        width:(CGFloat)width
+                      handler:(void(^)())handler
+{
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    _image = image;
+    _backgroundColor = backgroundColor;
+    _handler = handler;
+    _width = width;
+    return self;
+}
 
 @end

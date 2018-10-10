@@ -38,8 +38,19 @@
     for (RRSwipeAction *action in self.actions) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.backgroundColor = action.backgroundColor;
-        [button setTitle:action.title forState:UIControlStateNormal];
-        [button setTitleColor:action.titleColor forState:UIControlStateNormal];
+        
+        if (action.title) {
+            [button setTitle:action.title forState:UIControlStateNormal];
+        }
+        
+        if (action.titleColor) {
+            [button setTitleColor:action.titleColor forState:UIControlStateNormal];
+        }
+        
+        if (action.image) {
+            [button setImage:action.image forState:UIControlStateNormal];
+        }
+        
         button.titleLabel.font = action.font;
         button.tag = index;
         button.frame = CGRectMake(lastMinX - action.width, 0, action.width, self.maxSize.height);
