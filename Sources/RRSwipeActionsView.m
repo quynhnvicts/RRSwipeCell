@@ -37,7 +37,10 @@
     CGFloat lastMinX = self.maxSize.width;
     for (RRSwipeAction *action in self.actions) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-        button.backgroundColor = action.backgroundColor;
+        
+        if (action.backgroundColor) {
+            button.backgroundColor = action.backgroundColor;
+        }
         
         if (action.title) {
             [button setTitle:action.title forState:UIControlStateNormal];
@@ -51,7 +54,10 @@
             [button setImage:action.image forState:UIControlStateNormal];
         }
         
-        button.titleLabel.font = action.font;
+        if (action.font) {
+            button.titleLabel.font = action.font;
+        }
+        
         button.tag = index;
         button.frame = CGRectMake(lastMinX - action.width, 0, action.width, self.maxSize.height);
         [button addTarget:self action:@selector(_rr_handleClickAction:) forControlEvents:UIControlEventTouchUpInside];

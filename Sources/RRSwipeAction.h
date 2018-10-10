@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, readonly) UIImage *image;
 - (instancetype)initWithImage:(UIImage *)image
-              backgroundColor:(UIColor *)backgroundColor
                         width:(CGFloat)width
                       handler:(void(^)())handler;
 
